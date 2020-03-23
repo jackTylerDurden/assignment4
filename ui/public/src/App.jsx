@@ -19,8 +19,7 @@ class ProductList extends React.Component{
             productList{
                 id Name Price Image Category
             }
-        }`;
-        console.log("---->>>",window.env.UI_API_ENDPOINT);
+        }`;        
         const response = await fetch(window.env.UI_API_ENDPOINT,{
             method:'POST',
             headers : {'content-type':'application/json'},

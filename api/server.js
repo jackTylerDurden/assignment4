@@ -5,31 +5,27 @@ const { MongoClient } = require('mongodb');
 const { ApolloServer } = require('apollo-server-express');
 require('dotenv').config();
 
-const url = process.env.DB_URL || 'mongodb+srv://tanmaydeshpande:@cluster0-0ay1s.mongodb.net/test?retryWrites=true&w=majority';
+const url = process.env.DB_URL || 'mongodb+srv://tanmaydeshpande:Tanmay@7293@cluster0-0ay1s.mongodb.net/test?retryWrites=true&w=majority';
 let db;
-
 async function productList() {
   const productDB = await db.collection('products').find({}).toArray();
   return productDB;
 }
 
 async function getNextSequence(name) {
-    console.log("name---->>>",name);
   const result = await db.collection('counters').findOneAndUpdate(
-    { id: name },
+    { _id: name },
     { $inc: { current: 1 } },
     { returnOriginal: false },
   );
-  console.log('result---->>>',result);
   return result.value.current;
 }
 async function productAdd(_, { product }) {
-    const newProduct = product;    
-    newProduct.id = await getNextSequence('products');        
-    const result = await db.collection('products').insertOne(product);
-    const savedProduct = await db.collection('products')
-        .findOne({ _id: result.insertedId });
-    return savedProduct;
+  const newProduct = product;
+  newProduct.id = await getNextSequence('products');
+  const result = await db.collection('products').insertOne(product);
+  const savedProduct = await db.collection('products').findOne({ _id: result.insertedId });
+  return savedProduct;
 }
 
 const resolvers = {

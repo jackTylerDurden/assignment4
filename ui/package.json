@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "babel public/src --presets @babel/react --out-dir public --watch --verbose",
     "compile": "babel public/src --presets @babel/react --out-dir public",
-    "lint": "eslint . --ext js,jsx --ignore-pattern src"
+    "lint": "eslint --fix . --ext js,jsx --ignore-pattern src"
   },
   "author": "",
   "license": "ISC",
