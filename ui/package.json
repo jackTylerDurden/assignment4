@@ -1,0 +1,27 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "uiserver.js",
+  "scripts": {
+    "start": "nodemon -w uiserver.js -w .env uiserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel public/src --presets @babel/react --out-dir public --watch --verbose",
+    "compile": "babel public/src --presets @babel/react --out-dir public",
+    "lint": "eslint . --ext js,jsx --ignore-pattern src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "express": "^4.17.1"
+  }
+}

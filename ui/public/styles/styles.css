@@ -1,0 +1,47 @@
+body{
+    font-family : Ariel,Halvetica,sans-serif;
+    font-size: 1em;
+    line-height: 2em;    
+    width:960px;
+    margin:20px auto;   
+}
+
+.button {
+    background-color: white;    
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.prodTable{
+    border-collapse: collapse;
+    width: 100%;    
+}
+
+.prodTable th, td{
+    border: 1px solid silver;
+    padding: 4px;
+    width: 25%;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+
+.row:after {
+    content: "";
+  display: table;
+  clear: both;
+  }
+  
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
