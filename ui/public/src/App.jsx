@@ -20,14 +20,13 @@ class ProductList extends React.Component{
                 id Name Price Image Category
             }
         }`;
-
-        const response = await fetch('/graphql',{
+        console.log("---->>>",window.env.UI_API_ENDPOINT);
+        const response = await fetch(window.env.UI_API_ENDPOINT,{
             method:'POST',
             headers : {'content-type':'application/json'},
             body: JSON.stringify({query})
-        });
-
-        const responseResult = await response.json();
+        });        
+        const responseResult = await response.json();        
         this.setState({products:responseResult.data.productList})
     }
 
@@ -44,7 +43,8 @@ class ProductList extends React.Component{
                 Category: ${newProduct.category},
             }) {id}
         }`;
-        const response = await fetch('/graphql', {
+
+        const response = await fetch(window.env.UI_API_ENDPOINT, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({query})
@@ -74,7 +74,7 @@ class ProductTable extends React.Component {
         return(
             <table className="prodTable">
                 <thead>
-                    <tr>
+                    <tr>                    
                     <th style={rowStyle}>Product Name</th>
                     <th style={rowStyle}>Price</th>
                     <th style={rowStyle}>Category</th>

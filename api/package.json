@@ -17,6 +17,7 @@
     "eslint-plugin-import": "^2.20.1",
     "express": "^4.17.1",
     "graphql": "^14.6.0",
+    "mongo": "^0.1.0",
     "mongodb": "^3.5.5"
   }
 }
